@@ -7,14 +7,13 @@ package happines.co.ivan.jonas;
 import eventos.Eventos;
 import favoritos.Favoritos;
 import galerias.Galerias;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import usuarios.Usuarios;
 
 /**
  *
- * @author ALUMNOS_FP
+ * @author IvanJonas
  */
 public class HappinesCOIvanJonas {
 
@@ -115,12 +114,12 @@ public class HappinesCOIvanJonas {
         }
 
     }
+    static int contadorEventos = 0;
 
     // Metodos Eventos
     private static void añadirEvento(HashMap<Integer, Eventos> mapa) {
 
         //Creamos el contador de eventos
-        int contadorEventos = 0;
         Scanner escaner = new Scanner(System.in);
 
         System.out.print("Indica la fecha del evento: ");
@@ -131,10 +130,10 @@ public class HappinesCOIvanJonas {
         String ubicacion = escaner.nextLine();
         System.out.print("Escribe una breve descripcion del evento: ");
         String descripcion = escaner.nextLine();
-        //Aumentamos el contador en cada creacion del evento
-        int id = contadorEventos++;
-        mapa.put(id, new Eventos(id, fecha, titulo, ubicacion, descripcion));
+        mapa.put(contadorEventos, new Eventos(contadorEventos, fecha, titulo, ubicacion, descripcion));
         System.out.println("Evento creado correctamente.");
+        //Aumentamos el contador en cada creacion del siguiente evento
+        contadorEventos++;
     }
 
     private static void eliminarEvento(HashMap<Integer, Eventos> mapa) {
@@ -159,33 +158,38 @@ public class HappinesCOIvanJonas {
 
     }
 
+    static int contadorGalerias = 0;
+
     //Metodos Galeria
     private static void añadirGaleria(HashMap<Integer, Eventos> mapa) {
         //Inicializamos el escaner
         Scanner escaner = new Scanner(System.in);
 
-        //Creamos el contador para galerias
-        int contadorGalerias = 0;
-
         //Mostramos toda la lista de eventos con un bucle
         System.out.println("Listado de eventos:");
-        for (Eventos evento : mapa.values()) {
-            System.out.println(evento);
+        for (Integer evento : mapa.keySet()) {
+            System.out.println("ID : " + evento + " Titulo Evento: " + mapa.get(evento).getTitulo());
+        }
+        //Pedimos el ID del evento que crearemos una galeria
+        System.out.println("Introduce el ID del evento para crear una galeria:");
+        int id = escaner.nextInt();
 
-            //Pedimos el ID del evento que crearemos una galeria
-            System.out.println("Introduce el ID del evento para crear una galeria:");
-            int id = escaner.nextInt();
-            escaner.nextLine();
+        if (!mapa.containsKey(id)) {
+            System.out.println("Introduce un ID de evento correcto");
+        } else {
+
+            escaner.nextLine(); //Para eliminar el buffer del escaner despues del INT
             if (mapa.containsKey(id)) {
 
                 System.out.println("Introduce el Titulo para la Galeria");
                 String titulo = escaner.nextLine();
                 mapa.get(id).getGalerias().put(contadorGalerias, new Galerias(contadorGalerias, titulo, id));
                 System.out.println("La galeria se ha creado correctamente");
+                //Aumentamos el contador de galerias para la siguiente creacion
+                contadorGalerias++;
             } else {
                 System.out.println("El evento no existe");
             }
-
         }
 
     }
@@ -196,8 +200,8 @@ public class HappinesCOIvanJonas {
 
         //Mostramos toda la lista de eventos con un bucle
         System.out.println("Listado de eventos:");
-        for (Eventos evento : mapa.values()) {
-            System.out.println(evento);
+        for (Integer evento : mapa.keySet()) {
+            System.out.println("El evento " + mapa.get(evento).getTitulo() + "-- su ID es : " + mapa.get(evento).getId());
 
         }
 
@@ -212,9 +216,9 @@ public class HappinesCOIvanJonas {
         } else {
 
             //Creamos un bucle para mostrar las galerias que tiene dicho evento
-            System.out.println("El evento tiene estas galerias");
+            System.out.println("El evento tiene estas galerias  ");
             for (Galerias galerias : mapa.get(id).getGalerias().values()) {
-                System.out.println("El id de la galeria es: " + galerias.getId() + "El titulo de esta galeria es : " + galerias.getTitulo());
+                System.out.println("El titulo de esta galeria es : " + galerias.getTitulo() + "-- su ID es: " + galerias.getId());
             }
 
             //Preguntamos que galeria quiere eliminar dentro de un Evento
@@ -239,15 +243,12 @@ public class HappinesCOIvanJonas {
 
         //Mostramos toda la lista de eventos con un bucle
         System.out.println("Listado de eventos:");
-        for (Eventos evento : mapa1.values()) {
-            System.out.println(evento);
-
+        for (Integer evento : mapa1.keySet()) {
+            System.out.println(" Titulo el Evento: " + mapa1.get(evento).getTitulo() + "-- ID: " + evento);
         }
         //Mostramos todos los usuarios
-        System.out.println("Los usuarios son: ");
-
-        for (Usuarios usu : mapa2.values()) {
-            System.out.println(usu);
+        for (String usu : mapa2.keySet()) {
+            System.out.println("Nombre del usuario:" + mapa2.get(usu).getNombre() + "-- Correo:" + mapa2.get(usu).getEmail());
         }
 
         //Pedimos al usuario  el id del evento y el correo del usuario
@@ -275,8 +276,8 @@ public class HappinesCOIvanJonas {
 
         //Mostramos toda la lista de eventos con un bucle
         System.out.println("Listado de eventos:");
-        for (Favoritos favo : mapa.values()) {
-            System.out.println(favo);
+        for (Integer favo : mapa.keySet()) {
+            System.out.println("El usuario :" + mapa.get(favo).getCorreoUsuario()+ " tiene como favorito el evento con ID:" + mapa.get(favo).getIdEvento());
 
             //Preguntamos al usuarios el id del evento y el usuario que hay que borrar de favortios
             System.out.println("Que id de eventos quieres borrar? ");
