@@ -7,6 +7,7 @@ package happines.co.ivan.jonas;
 import eventos.Eventos;
 import favoritos.Favoritos;
 import galerias.Galerias;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import usuarios.Usuarios;
@@ -26,7 +27,7 @@ public class HappinesCOIvanJonas {
         //Creamos el HashMap para eventos
         final HashMap<Integer, Eventos> eventos = new HashMap<>();
         //Creamos el HashMap para favoritos
-        final HashMap<Integer, Favoritos> favoritos = new HashMap<>();
+        final ArrayList<Favoritos> favoritos = new ArrayList<>();  ///TENGO QUE ARREGLAR ARRALISTS EN TODO
 
         //Inicializamos el escanner y  las opciones del menu
         Scanner scanner = new Scanner(System.in);
@@ -148,9 +149,12 @@ public class HappinesCOIvanJonas {
         //Preguntamos el evento que quiere eleiminar
         System.out.print("Ponga el ID del evento a  eliminar: ");
         int id = escaner.nextInt();
+        //Limpiamos el Buffer despues de pedir un INT
         escaner.nextLine();
 
-        if (mapa.remove(id) != null) {
+        //Comprobamos si el mapa contiene el id y lo elimina
+        if (mapa.containsKey(id)) {
+            mapa.remove(id);
             System.out.println("Evento eliminado correctamente.");
         } else {
             System.out.println("El evento no existe.");
@@ -173,7 +177,7 @@ public class HappinesCOIvanJonas {
         //Pedimos el ID del evento que crearemos una galeria
         System.out.println("Introduce el ID del evento para crear una galeria:");
         int id = escaner.nextInt();
-
+        //Comprobamos que el id introducido esta en el hashmap
         if (!mapa.containsKey(id)) {
             System.out.println("Introduce un ID de evento correcto");
         } else {
@@ -181,8 +185,11 @@ public class HappinesCOIvanJonas {
             escaner.nextLine(); //Para eliminar el buffer del escaner despues del INT
             if (mapa.containsKey(id)) {
 
+                //Preguntamos el Nuevo titulo de la Galeria
                 System.out.println("Introduce el Titulo para la Galeria");
                 String titulo = escaner.nextLine();
+
+                //Añadimos la Galeria con los datos introducidos y el contador creado anteriormente
                 mapa.get(id).getGalerias().put(contadorGalerias, new Galerias(contadorGalerias, titulo, id));
                 System.out.println("La galeria se ha creado correctamente");
                 //Aumentamos el contador de galerias para la siguiente creacion
@@ -226,6 +233,7 @@ public class HappinesCOIvanJonas {
             int idGaleria = escaner.nextInt();
             //Comprobamos que el evento tenga la galeria y si es asi la borramos
             if (mapa.get(id).getGalerias().containsKey(idGaleria)) {
+                //Eliminamos la Galeria si esta dentro del HashMap
                 mapa.get(id).getGalerias().remove(idGaleria);
                 System.out.println("Galeria eliminada correctamente");
             } else {
@@ -237,18 +245,18 @@ public class HappinesCOIvanJonas {
     }
 
     //Metodos Favorito
-    private static void añadirFavorito(HashMap<Integer, Eventos> mapa1, HashMap<String, Usuarios> mapa2, HashMap<Integer, Favoritos> mapa3) {
+    private static void añadirFavorito(HashMap<Integer, Eventos> mapa1, HashMap<String, Usuarios> mapa2, ArrayList<Favoritos> array) {
         //Inicializamos el escaner
         Scanner escaner = new Scanner(System.in);
 
         //Mostramos toda la lista de eventos con un bucle
         System.out.println("Listado de eventos:");
         for (Integer evento : mapa1.keySet()) {
-            System.out.println(" Titulo el Evento: " + mapa1.get(evento).getTitulo() + "-- ID: " + evento);
+            System.out.println(" Titulo el Evento: " + mapa1.get(evento).getTitulo() + " --- ID: " + evento);
         }
         //Mostramos todos los usuarios
         for (String usu : mapa2.keySet()) {
-            System.out.println("Nombre del usuario:" + mapa2.get(usu).getNombre() + "-- Correo:" + mapa2.get(usu).getEmail());
+            System.out.println("Nombre del usuario:" + mapa2.get(usu).getNombre() + " ---  Correo:" + mapa2.get(usu).getEmail());
         }
 
         //Pedimos al usuario  el id del evento y el correo del usuario
@@ -256,43 +264,61 @@ public class HappinesCOIvanJonas {
         int id = escaner.nextInt();
 
         escaner.nextLine();
+
         System.out.println("De que usuario quieres crear el favorito?(Correo)");
         String usu = escaner.nextLine();
-
+        
+        //Comprobamos si estan en el HashMap el correo y el Id introducido
         if (!mapa1.containsKey(id) || !mapa2.containsKey(usu)) {
+
             System.out.println("No se ha introducido un evento o usuario correcto");
+
         } else {
-
-            mapa3.put(id, new Favoritos(usu, id));
-
+            array.add(new Favoritos(usu, id));
             System.out.println("El favortio se ha creado correctamente");
 
         }
     }
 
-    private static void eliminarFavorito(HashMap<Integer, Favoritos> mapa) {
+    private static void eliminarFavorito(ArrayList<Favoritos> array) {
         //Inicializamos el escaner
         Scanner escaner = new Scanner(System.in);
 
+        //Comprobamos si el array esta vacio
+        if (array.isEmpty()) {
+            System.out.println("No hay favoritos registrados.");
+            return;
+        }
         //Mostramos toda la lista de eventos con un bucle
-        System.out.println("Listado de eventos:");
-        for (Integer favo : mapa.keySet()) {
-            System.out.println("El usuario :" + mapa.get(favo).getCorreoUsuario()+ " tiene como favorito el evento con ID:" + mapa.get(favo).getIdEvento());
-
-            //Preguntamos al usuarios el id del evento y el usuario que hay que borrar de favortios
-            System.out.println("Que id de eventos quieres borrar? ");
-            int id = escaner.nextInt();
-            System.out.println("Que correo de favortios quieres borrar? ");
-            String usu = escaner.nextLine();
-
-            if (!mapa.containsKey(id) || !mapa.containsValue(usu)) {
-                System.out.println("El favorito no existe");
-            } else {
-                mapa.remove(id, usu);
-                System.out.println("El favorito se ha eliminado correctamente");
-            }
+        System.out.println("Favoritos actuales:");
+        for (Favoritos fav : array) {
+            System.out.println("Usuario: " + fav.getCorreoUsuario()
+                    + " | Evento ID: " + fav.getIdEvento());
         }
 
+        //Pedimos al usuario el Email a comprobar para eliminar
+        System.out.print("Ingrese el email del usuario: ");
+        String correo = escaner.nextLine();
+        //Pedimos al usuario el ID a comprobar para eliminar
+        System.out.print("Ingrese el ID del evento: ");
+        int id = escaner.nextInt();
+        //Limpiamos el Buffer
+        escaner.nextLine();
+        // Creamos un Bucle para recorrer el array y un boolean para comprobar el ID Y el Correo
+        boolean encontrado = false;
+        for (int i = 0; i < array.size(); i++) {
+
+            if (array.get(i).getIdEvento() == id && array.get(i).getCorreoUsuario().equals(correo)) {
+                array.remove(i);
+                encontrado = true;
+                break;
+            }
+        }
+        if (encontrado) {
+            System.out.println("Elemento eliminado correctamente");
+        } else {
+            System.out.println("No existe un elemento con esos datos");
+        }
     }
 
 }
