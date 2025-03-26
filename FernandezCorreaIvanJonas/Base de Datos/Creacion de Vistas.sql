@@ -1,3 +1,5 @@
+USE HappinessCo;
+GO
 --Creacion de Vistas 
 
 --Creacion  de vista que devuelva las galerias anteriorires  al 28-02-2025

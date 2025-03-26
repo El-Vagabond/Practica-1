@@ -1,3 +1,6 @@
+
+USE HappinessCo;
+GO
 --Insertamos los Usuarios
 INSERT INTO Usuarios (nombre, email, password) VALUES
 ('Alma', 'almita@gmail.com', 'catartitos'),
@@ -7,39 +10,39 @@ INSERT INTO Usuarios (nombre, email, password) VALUES
 
 --Insertamos los Eventos
 INSERT INTO Eventos (fecha, titulo, ubicacion, descripcion) VALUES
-('2025-01-01', 'Concierto de Año Nuevo', 'Teatro Principal', 'Un gran concierto para comenzar el año.'),
-('2025-01-12', 'Exposición de Arte Moderno', 'Museo Central', 'Obras de artistas contemporáneos.'),
-('2025-01-24', 'Noche de Teatro', 'Teatro Municipal', 'Representación de una obra de os alumnos de programacion'),
-('2025-03-05', 'Festival de Cine', 'Cineplex', 'Proyecciones de películas independientes.'),
-('2025-03-15', 'Conferencia Tecnológica', 'Centro de Convenciones', 'Avances en tecnología digital.'),
-('2025-03-25', 'Taller de Fotografía', 'Escuela de Artes', 'Aprende técnicas avanzadas de fotografía.');
+('2025-01-01', 'Feria de Muestras', 'Recinto ferial', 'Primera gran feria del año'),
+('2025-01-12', 'Tsunami Xixon', 'Parking Feria de Muestras', 'LLegan grandes grupos de Gijon'),
+('2025-01-24', 'Concierto de Rock en Vivo', 'Plaza ayuntamiento', 'Grupos local realizan concierto de rock'),
+('2025-03-05', 'Fiesta de la Sidra', 'Playa de San Lorenzo', 'Intentar batir el record de escanciar sidra'),
+('2025-03-15', 'Tarde en el Teatro', 'Teatro Jovellanos', 'Obras de grupos de teatro tanto local como nacional'),
+('2025-03-25', 'Concierto NWNF', 'La laboral', 'Toca grupo NWNF en la laboral');
 
 
 --Insertamos las Galerias
 INSERT INTO Galerias (titulo, id_evento) VALUES
-('Galería Concierto', 1),
-('Galería Exposición', 2),
-('Galería Teatro', 3);
+('Galería Feria', 1),
+('Galería Tsunami', 2),
+('Galería Concierto', 3);
 
 
 --Insertamos las Imagenes de las Galerias
--- Para la galería del Concierto del año nuevo
+-- Para la galería de la Feria Muestras 
 INSERT INTO Imagenes (titulo, imagen, id_galeria) VALUES
-('Mano Corazon', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\concierto1.jpg"', 1),
-('Escenario', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\concierto2.jpg"', 1),
-('Melendi', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\concierto3.jpg"', 1);
+('Entrada', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\feria.jpg"', 1),
+('Multitud gente', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\feria1.jpg"', 1),
+('Salida', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\feria2.jpg"', 1);
 
--- Para la galería del evento  Exposicion arte Moderno
+-- Para la galería del evento  Tsunami en Gijon
 INSERT INTO Imagenes (titulo, imagen, id_galeria) VALUES
-('Esquina de fotos', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\exposicion1.jpg"', 2),
-('La pared', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\exposicion2.jpg"', 2),
-('El busto', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\exposicion3.jpg"', 2);
+('Plaza noche', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\tsu.jpg"', 2),
+('Tsunami Mujer', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\tsu1.jpg"', 2),
+('LLenazo', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\tsu2.jpg"', 2);
 
--- Para la galería del evento Noche en el Teatro
+-- Para la galería del Concierto Melendi
 INSERT INTO Imagenes (titulo, imagen, id_galeria) VALUES
-('El teatro', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\teatro1.jpg"', 3),
-('Aladin', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\teatro2.jpg"', 3),
-('Teatro cerrado', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\teatro3.jpg"', 3);
+('Melendi cerca', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\concierto1.jpg"', 3),
+('Escenario', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\concierto2.jpg"', 3),
+('Melendi', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\concierto3.jpg"', 3);
 
 
 
