@@ -4,7 +4,7 @@
     --color-text: #555555;
     --color-bg: #f4f4f4;
     --color-bg-light: #fff;
-    --color-dark: #333;
+    --color-dark: #ba007c;
     --color-dark-hover: #555;
     --color-border: #ddd;
     --border-radius: 5px;
@@ -55,7 +55,7 @@ header {
 }
 
 .logo img {
-    height: 50px;
+    max-height: 80px;
 }
 
 /* ===== NAVEGACIÓN ===== */
