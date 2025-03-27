@@ -1,11 +1,10 @@
-/* ===== VARIABLES ===== */
 :root {
     --color-primary: #ba007c;
     --color-text: #555555;
     --color-bg: #f4f4f4;
     --color-bg-light: #fff;
-    --color-dark: #333;
-    --color-dark-hover: #555;
+    --color-dark: #ba007c;
+    --color-dark-hover: #444; 
     --color-border: #ddd;
     --border-radius: 5px;
     --spacing: 20px;
@@ -25,18 +24,17 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 img {
     max-width: 100%;
-    height: auto;
+    height: 350px;
     display: block;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
 }
 
 /* ===== ESTRUCTURA PRINCIPAL ===== */
@@ -55,7 +53,7 @@ header {
 }
 
 .logo img {
-    height: 50px;
+    max-height: 80px;
 }
 
 /* ===== NAVEGACIÓN ===== */
@@ -90,70 +88,61 @@ section {
     border-radius: var(--border-radius);
 }
 
-/* ===== CONTENIDO PRINCIPAL ===== */
+/* Estructura principal similar a eventos.html */
 .contenido-principal {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing);
-}
-
-@media (min-width: 992px) {
-    .contenido-principal {
-        grid-template-columns: 3fr 1fr;
-    }
-}
-
-/* Sección de Próximos Eventos */
-.proximos-eventos {
-    position: relative;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: var(--spacing);
 }
 
-.proximos-eventos h2 {
+/* Estilos para la sección de texto e imágenes */
+.contenido-principal img {
     width: 100%;
-    margin-bottom: var(--spacing);
+    height:350;
+    object-fit:scale-down;
+    border-radius: var(--border-radius);
+    align-items:first baseline ;
 }
 
-.evento {
+/* Estilos para el equipo */
+.equipo {
+    width: 100%;
+}
+
+.personal {
     flex: 1 1 300px;
     border: 1px solid var(--color-border);
-    padding: var(--spacing-small);
+    padding: var(--spacing);
+    margin: var(--spacing-small);
     border-radius: var(--border-radius);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.evento:hover {
+.personal:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.evento img {
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: var(--spacing-small);
+.personal img {
+    height: 300px;
+    width: 100%;
+    object-fit: scale-down;
     border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-small);
 }
 
-.evento h3 a {
+.personal h4 {
     color: var(--color-primary);
     margin-bottom: var(--spacing-small);
-    display: block;
 }
 
-/* Aside Recomendados */
-aside.recomendados {
-    margin-top: -80px;
-    width: 25%;
-    float: right;
-    background-color: #fff;
-    border-radius: 7px;
-    padding: 20px;
-}
-
-aside.recomendados h2 {
-    margin-bottom: var(--spacing);
+/* Recomendados (similar al aside de eventos.html) */
+.recomendados {
+    width: 30%;
+    padding: var(--spacing);
+    background-color: var(--color-bg-light);
+    border-radius: var(--border-radius);
+    margin-left: var(--spacing);
 }
 
 /* ===== FOOTER ===== */
@@ -163,6 +152,7 @@ footer {
     text-align: center;
     padding: var(--spacing);
     margin-top: var(--spacing);
+    clear: both;
 }
 
 .redes-sociales {
@@ -176,6 +166,7 @@ footer {
     width: 25px;
     height: 25px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .redes-sociales img:hover {
@@ -188,17 +179,53 @@ footer {
         flex-direction: column;
     }
 
-    .proximos-eventos {
+    .contenido-principal {
         flex-direction: column;
     }
 
-    .evento {
+    .personal {
         flex: 1 1 100%;
     }
 
-    aside.recomendados {
+    .recomendados {
+        width: 100%;
+        margin-left: 0;
         margin-top: var(--spacing);
-        float: none;
-        width: auto;
     }
 }
+
+.css-button-sliding-to-left--rose {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+    background: #fff;
+    overflow: hidden;
+    border: 2px solid #ff0a78;
+    color: #ff0a78;
+  }
+  .css-button-sliding-to-left--rose:hover {
+    color: #fff;
+  }
+  .css-button-sliding-to-left--rose:hover:after {
+    width: 100%;
+  }
+  .css-button-sliding-to-left--rose:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s ease;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #ff0a78;
+  }
