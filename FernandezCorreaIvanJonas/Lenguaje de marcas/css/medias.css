@@ -1,0 +1,27 @@
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .proximos-eventos {
+        flex-direction: column;
+    }
+
+    .evento {
+        flex: 1 1 100%;
+    }
+
+    aside.recomendados {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .contenido-principal {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: var(--spacing);
+    }
+}

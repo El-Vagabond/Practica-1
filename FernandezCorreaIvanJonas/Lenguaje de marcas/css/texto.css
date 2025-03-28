@@ -1,0 +1,17 @@
+.container {
+  height: 100%;
+  width: 100%;
+  justify-content: left;
+  align-items: left;
+  display: flex;
+  padding: 15px;
+  margin: 10px;
+}
+.text {
+  font-weight: 100;
+  font-size: 28px;
+  color: #050505;
+}
+.dud {
+  color: #757575;
+}

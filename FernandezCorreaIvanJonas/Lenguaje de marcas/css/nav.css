@@ -1,0 +1,35 @@
+/* ===== VARIABLES ===== */
+:root {
+    --color-primary: #ba007c;
+    --color-text: #555555;
+    --color-bg: #f4f4f4;
+    --color-bg-light: #fff;
+    --color-dark: #ba007c;
+    --color-dark-hover: #444; 
+    --color-border: #ddd;
+    --border-radius: 5px;
+    --spacing: 20px;
+    --spacing-small: 10px;
+    --header-height: 80px;
+    --nav-height: 50px;
+}
+/* ===== NAVEGACIÓN ===== */
+nav {
+    background-color: var(--color-dark);
+    color: var(--color-bg-light);
+    padding: var(--spacing-small);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: var(--color-bg-light);
+    padding: var(--spacing-small);
+    display: block;
+    transition: background-color 0.3s ease;
+}
+

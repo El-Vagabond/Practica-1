@@ -1,0 +1,42 @@
+/* ===== VARIABLES ===== */
+:root {
+    --color-primary: #ba007c;
+    --color-text: #555555;
+    --color-bg: #f4f4f4;
+    --color-bg-light: #fff;
+    --color-dark: #ba007c;
+    --color-dark-hover: #444; 
+    --color-border: #ddd;
+    --border-radius: 5px;
+    --spacing: 20px;
+    --spacing-small: 10px;
+    --header-height: 80px;
+    --nav-height: 50px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-bg-light);
+    text-align: center;
+    padding: var(--spacing);
+    margin-top: var(--spacing);
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing);
+    margin-top: var(--spacing-small);
+}
+
+.redes-sociales img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.redes-sociales img:hover {
+    transform: scale(1.2);
+}

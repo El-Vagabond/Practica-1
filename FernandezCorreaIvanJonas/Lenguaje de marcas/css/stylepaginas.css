@@ -1,0 +1,22 @@
+@import url(./reset.css);
+@import url(./header.css);
+@import url(./nav.css);
+@import url(./cuerpo.css);
+@import url(./footer.css);
+@import url(./radioimg.css);
+@import url(./h2.css);
+@import url(./galeria.css);
+:root {
+    --color-primary: #ba007c;
+    --color-text: #555555;
+    --color-bg: #f4f4f4;
+    --color-bg-light: #fff;
+    --color-dark: #ba007c;
+    --color-dark-hover: #444; 
+    --color-border: #ddd;
+    --border-radius: 5px;
+    --spacing: 20px;
+    --spacing-small: 10px;
+    --header-height: 80px;
+    --nav-height: 50px;
+}
