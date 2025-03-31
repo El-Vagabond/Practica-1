@@ -1,6 +1,9 @@
 /* Estilos para el equipo */
 .equipo {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .personal {
@@ -18,9 +21,9 @@
 }
 
 .personal img {
-    height: 300px;
+    height:auto;
     width: 100%;
-    object-fit: scale-down;
+    object-fit: cover;
     border-radius: var(--border-radius);
     margin-bottom: var(--spacing-small);
 }
