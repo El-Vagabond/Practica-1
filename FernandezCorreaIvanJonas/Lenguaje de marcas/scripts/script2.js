@@ -61,7 +61,7 @@ const phrases = [
 'Eventos Pasados',
 'Aqui en Gijon',
 'Todo te lo mostramos aqui',
-'Te Esperamos'];
+'Te Esperamos :)'];
 
 
 const el = document.querySelector('.text');

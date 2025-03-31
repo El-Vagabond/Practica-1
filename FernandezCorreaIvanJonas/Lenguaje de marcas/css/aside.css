@@ -6,8 +6,7 @@
 }
 /* Aside Recomendados */
 aside.recomendados {
-    position: sticky;
-    margin-top: -50px;
+    display: flex;
     width: 25%;
     background-color: var(--color-bg-light);
     border-radius: var(--border-radius);

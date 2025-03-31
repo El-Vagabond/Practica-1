@@ -13,7 +13,6 @@
     --nav-height: 50px;
 }
 
-/* ===== SECCIONES DE CONTENIDO ===== */
 .contenido-principal {
     display: flex;
     flex-direction: column; 
@@ -31,7 +30,7 @@
     gap: var(--spacing);
 }
 
-
+/* Estos eventos para ver  EVENTOS EN HORIZONTAL*/
 .evento {
     flex: 1 1 300px;
     border: 1px solid var(--color-border);

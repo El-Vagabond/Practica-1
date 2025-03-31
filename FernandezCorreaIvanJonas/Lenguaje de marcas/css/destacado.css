@@ -1,10 +1,9 @@
-/* ===== VARIABLES ===== */
+
 :root {
     --border-radius: 5px;
     --spacing-small: 10px;
 }
 
-/* Evento Destacado */
 .evento-destacado {
     text-align: center;
     position: relative;

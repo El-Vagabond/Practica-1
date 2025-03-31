@@ -1,6 +1,6 @@
 .gallery {
-    --s: 30px; /* control the zig-zag size */
-    --g: 5px; /* control the gap */
+    --s: 30px; 
+    --g: 5px; 
   
     display: grid;
     height: 350px;
