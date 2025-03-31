@@ -1,7 +1,7 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "asine";
     background-color: var(--color-bg);
-    color: var(--color-text);
+    color: #050505;
     line-height: 1.7;
 }
 

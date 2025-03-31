@@ -13,7 +13,6 @@
     --header-height: 80px;
     --nav-height: 50px;
 }
-/* ===== NAVEGACIÓN ===== */
 nav {
     background-color: var(--color-dark);
     color: var(--color-bg-light);

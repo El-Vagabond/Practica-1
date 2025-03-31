@@ -1,18 +1,16 @@
-/* ===== VARIABLES ===== */
+
 :root {
     --color-bg-light:#f4f4f4;
     --border-radius: 5px;
     --spacing: 20px;
 }
-/* Aside Recomendados */
 aside.recomendados {
-    display: flex;
+   
     width: 25%;
     background-color: var(--color-bg-light);
     border-radius: var(--border-radius);
     padding: var(--spacing);
 }
-
 aside.recomendados h2 {
     margin-bottom: var(--spacing);
 }

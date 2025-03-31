@@ -1,25 +1,26 @@
-h2::before {  
+h2::before, h3:before  {  
     transform: scaleX(0);
     transform-origin: bottom right;
   }
   
-  h2:hover::before {
+  h2:hover::before , h3:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
   
-  h2::before {
+  h2::before ,h3::before {
     content: " ";
     display: block;
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     inset: 0 0 0 0;
-    background:#ba007c;
+    background:#ba007ca0;
     z-index: -1;
     transition: transform .3s ease;
+    
   }
   
-  h2 {
+  h2,h3 {
     position: relative;
     font-size: 28px;
   }
