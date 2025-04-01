@@ -25,30 +25,31 @@
         </ul>
     </nav>
 
-    <section class="contenido-principal">
-        <h2>Contacto</h2>
-        <form action="#" method="post"> 
-            <label for="nombre">Nombre:</label><br>
-            <input type="text" id="nombre" name="nombre"><br><br>
-
-            <label for="apellidos">Apellidos:</label><br>
-            <input type="text" id="apellidos" name="apellidos"><br><br>
-
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-
-            <label for="telefono">Teléfono:</label><br>
-            <input type="tel" id="telefono" name="telefono"><br><br>
-
-            <label for="comentario">Comentario:</label><br>
-            <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea><br><br>
-
-            <input type="checkbox" id="suscribir" name="suscribir" value="suscribir">
-            <label for="suscribir">Autorizo mi inscripción en la base de suscriptores</label><br><br>
-
-            <input type="submit" value="Enviar">
-        </form>
-    </section>
+    <div class="container">
+        <form>
+          <div class="field" tabindex="1">
+            <label for="username">
+              <i class="far fa-user"></i>Your Name
+            </label>
+            <input name="username" type="text" placeholder="e.g. john doe" required>
+          </div>
+          <div class="field" tabindex="2">
+            <label for="email">
+              <i class="far fa-envelope"></i>Your Email
+            </label>
+            <input name="email" type="text" placeholder="email@domain.com" required>
+          </div>
+          <div class="field" tabindex="3">
+            <label for="message">
+              <i class="far fa-edit"></i>Your Message
+            </label>
+            <textarea name="message" placeholder="type here" required></textarea>
+          </div>
+          <button type="reset">Send Me Message</button>
+          <div class="social-media">
+            <span>
+              Get In Touch<i class="fas fa-long-arrow-alt-right"></i>
+            </span>
 
     <footer>
         <p>&copy; 2025 Happiness&Co</p>

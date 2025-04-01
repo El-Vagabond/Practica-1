@@ -14,15 +14,15 @@ h2::before, h3:before  {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     inset: 0 0 0 0;
-    background:#ba007ca0;
+    background:#da60b173;
     z-index: -1;
     transition: transform .3s ease;
     
   }
   
-  h2,h3 {
+  h2,h3{
     position: relative;
-    font-size: 28px;
+    font-size: 20px;
   }
   
 @media (orientation: landscape) {
