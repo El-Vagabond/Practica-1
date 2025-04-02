@@ -1,4 +1,4 @@
-.proximos-eventos img,.recomendados img,.contenido-principal img {
+.proximos-eventos img,.recomendados img,.contenido-principal img ,.historial-eventos img ,.proximo img {
     --m:
     radial-gradient(circle farthest-side at right,#000 99%,#0000) 
       0 100%/46% 92% no-repeat,

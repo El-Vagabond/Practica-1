@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto - Happiness&Co</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-          <a href="./index.html">  <img src="./assets/img/happines-and-co-propuesta-02.png" alt="Happiness&Co Logo"></a>
-        </div>
+      <div class="logo">
+        <a href="./index.html">
+          <img
+            src="./assets/img/happines-and-co-propuesta-02.png"
+            alt="Happiness&Co Logo"
+        /></a>
+      </div>
     </header>
 
     <nav>
-        <ul class="menu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="historial.html">Historial de Eventos</a></li>
-            <li><a href="nosotros.html">Sobre Nosotros</a></li>
-            <li><a href="fuentes.html">Fuentes</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="historial.html">Historial de Eventos</a></li>
+        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="fuentes.html">Fuentes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
     </nav>
+    <section class="contactBody">
+      <div class="wrapper">
+        <div class="title"></div>
 
-    <div class="container">
-        <form>
-          <div class="field" tabindex="1">
-            <label for="username">
-              <i class="far fa-user"></i>Your Name
-            </label>
-            <input name="username" type="text" placeholder="e.g. john doe" required>
-          </div>
-          <div class="field" tabindex="2">
-            <label for="email">
-              <i class="far fa-envelope"></i>Your Email
-            </label>
-            <input name="email" type="text" placeholder="email@domain.com" required>
-          </div>
-          <div class="field" tabindex="3">
-            <label for="message">
-              <i class="far fa-edit"></i>Your Message
-            </label>
-            <textarea name="message" placeholder="type here" required></textarea>
-          </div>
-          <button type="reset">Send Me Message</button>
-          <div class="social-media">
-            <span>
-              Get In Touch<i class="fas fa-long-arrow-alt-right"></i>
-            </span>
+        <form class="form">
+          <input type="text" class="name entry" placeholder="Nombre" />
 
+          <input type="text" class="surname entry" placeholder="Appellido" />
+          <input type="text" class="email entry" placeholder="Email" />
+
+          <textarea class="message entry" placeholder="Comentario"></textarea>
+          <div class="checkbox-container">
+            <input type="checkbox" id="suscripcion" name="suscripcion" />
+            <label for="suscripcion">Autorizo mi inscripción en la base de suscriptores</label>
+          </div>
+          <button class="submit entry">Enviar</button>
+        </form>
+        <div class="shadow"></div>
+      </div>
+
+      <script src="app.js"></script>
+    </section>
     <footer>
-        <p>&copy; 2025 Happiness&Co</p>
-        <div class="redes-sociales">
-            <a href="#"><img src="assets/img/logos/facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="assets/img/logos/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="assets/img/logos/instagram.png" alt="Instagram"></a>
-        </div>
+      <p>&copy; 2025 Happiness&Co</p>
+      <div class="redes-sociales">
+        <a href="#"
+          ><img src="assets/img/logos/facebook.png" alt="Facebook"
+        /></a>
+        <a href="#"><img src="assets/img/logos/twitter.png" alt="Twitter" /></a>
+        <a href="#"
+          ><img src="assets/img/logos/instagram.png" alt="Instagram"
+        /></a>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>

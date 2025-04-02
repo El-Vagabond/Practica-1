@@ -1,5 +1,14 @@
+@font-face {
+  font-family: "ASENT";
+  src: url("../fonts/ASENT.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-    font-family: "asine";
+  letter-spacing: 0.15em;
+  font-weight: bold;
+  font-size: 25px;
+    font-family: "ASENT";
     background-color: var(--color-bg);
     color: #050505;
     line-height: 1.7;
@@ -8,7 +17,7 @@ body {
 img {
     max-width: 100%;
     height: auto;
-    display: block;
+    display:flex;
 }
 
 

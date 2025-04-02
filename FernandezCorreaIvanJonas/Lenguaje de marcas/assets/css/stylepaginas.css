@@ -6,7 +6,9 @@
 @import url(./radioimg.css);
 @import url(./h2.css);
 @import url(./galeria.css);
+@import url(img.css);
 :root {
+
     --color-primary: #ba007c;
     --color-text: #555555;
     --color-bg: #f4f4f4;

@@ -1,0 +1,31 @@
+.lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lista li {
+    list-style: none;
+    padding: 8px 15px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    width: fit-content; /* Ajusta el ancho al contenido */
+}
+
+.lista li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.lista li:hover {
+    background-color: #ff69b4;
+}
+
+.lista li:hover a {
+    color: white;
+}

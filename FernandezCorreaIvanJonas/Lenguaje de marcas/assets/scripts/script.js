@@ -1,4 +1,3 @@
-
 class TextScramble {
   constructor(el) {
     this.el = el;
@@ -50,7 +49,8 @@ class TextScramble {
   }
   randomChar() {
     return this.chars[Math.floor(Math.random() * this.chars.length)];
-  }}
+  }
+}
 
 
 // ——————————————————————————————————————————————————
@@ -58,14 +58,21 @@ class TextScramble {
 // ——————————————————————————————————————————————————
 
 const phrases = [
-'Proximos Eventos',
-'Aqui en Gijon',
-'No te los Puedes Perder',
-'Te Esperamos :)'];
+  'Proximos Eventos',
+  'Aqui en Gijon',
+  'No te los Puedes Perder',
+  'Te Esperamos :)'];
+
+const phrases2 = [
+  'Eventos Recomendados Aqui en Gijon',
+  'Informate'];
 
 
 const el = document.querySelector('.text');
 const fx = new TextScramble(el);
+
+const el2 = document.querySelector('.text2');
+const fx2 = new TextScramble(el2);
 
 let counter = 0;
 const next = () => {
@@ -76,3 +83,13 @@ const next = () => {
 };
 
 next();
+
+let counter2 = 0;
+const next2 = () => {
+  fx2.setText(phrases2[counter2]).then(() => {
+    setTimeout(next2, 800);
+  });
+  counter2 = (counter2 + 1) % phrases2.length;
+};
+
+next2();

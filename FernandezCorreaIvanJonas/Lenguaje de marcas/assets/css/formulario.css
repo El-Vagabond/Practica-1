@@ -1,109 +1,152 @@
-@import url("https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap");
-* {
-  font-family: "Saira Semi Condensed", sans-serif;
-  transition: all 0.5s ease;
+.contactBody{ 
+  background-size: cover;
+  background-attachment: fixed;
+  height:700px;
+
+}
+.title{
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 42px;
+  color: rgb(252, 252, 252);
 }
 
-body {
-  background: #dfdfdf;
+#title-Tag-Line{
+    font-size: 20px;
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-  padding: 0 16px;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
+.wrapper {
+  width: 80%;
+  height: 50%;
+  margin: 5% auto 0 auto; 
 }
 
-form {
-  width: 400px;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
-}
-form div, form label, form input, form textarea {
-  width: 100%;
+
+.form {
+  background: #EBEBEB;
+  text-align: center; 
+  box-shadow: 0px 0px 20px 5px #AAA; 
+  border-radius: 10px;  
+  width: 60%; 
+  height: 500px;
+  margin: 30px auto 0 auto;
+  padding: 10px 10px;  
+  animation: bounce 1.5s infinite;
 }
 
-.field:nth-of-type(2) {
-  margin: 16px 0;
+.name,.surname { 
+  background-color: #DF1B76;
+  border-bottom: 5px solid #B2175F;
+  color: white;
+  width:300px;
 }
 
-label, input, textarea {
-  padding: 8px;
+::-webkit-input-placeholder{
+    color: white;
+    font-size: 20px;
+}
+.name:hover,.surname:hover{
+  background-color: #DF1B76;
+  border-bottom: 5px solid #B2175F;
+  height:30px;
+  width:400px;
 }
 
-label, [placeholder] {
-  color: #555;
+.email {
+  background-color:#DF1B76;  
+  border-bottom: 5px solid #DF1B76;
+  height:50px;
+  width:300px;
+  
+}
+.email:hover{
+  background-color: #DF1B76;  
+  border-bottom: 5px solid #DF1B76;
+  height:30px;
+  width:380px;
+ 
+}
+.message {   
+  background-color: #DF1B76;
+  border-bottom: 5px solid rgb(195, 35, 17);
+  overflow: hidden;
+  height: 100px;  
+  width:300px;
 }
 
-label i {
-  margin: 0 10px 0 0;
+.message:hover{
+  background-color: #DF1B76;
+  border-bottom: 5px solid #DF1B76;
+  height: 100px;
+  width:370px;
 }
 
-.field:focus-within label {
-  color: #000;
-  letter-spacing: 2px;
-}
-
-input, textarea {
-  background: rgba(255, 255, 255, 0.5);
+.submit{
+  border-radius:5px;
+  padding:10px;
+  background-color: #DF1B76;  
   border: none;
-  border-radius: 4px;
-  box-shadow: 0 8px 6px -6px #555;
-}
-input:focus, textarea:focus {
-  background: white;
-  box-shadow: none;
+  border-bottom: 5px solid #DF1B76; 
+  transform: translateY(-120px); 
+
 }
 
-textarea {
-  resize: none;
-}
-textarea::-webkit-scrollbar {
-  width: 0;
+.submit:hover{
+  border-bottom: 5px solid #DF1B76;  
+  box-shadow: 15px 15px 15px 5px rgba(78, 72, 77, 0.219);
 }
 
-button {
-  background: #2f4ad0;
-  margin: 16px 0 50px 0;
-  padding: 8px 16px;
-  color: #fff;
+.entry{
+  display: block;
+  margin: 30px auto;
+  padding: 10px;
+  border-radius: 5px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 0 8px 6px -6px #555;
-}
-button:hover {
-  letter-spacing: 2px;
-  box-shadow: none;
+  transition: all 0.5s ease 0s;
+  box-shadow: 0px 0px 25px 2px #AAA;  
 }
 
-.social-media {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+.shadow{
+  box-shadow: 0px 0px 60px 5px #AAA;
+  opacity: 0.5;
+  border-radius: 100px;
+  width: 50%; 
+  margin: 50px auto 0 auto;
+  padding: 0 20px;  
+  animation: shadow 1.5s infinite;
 }
-:not(.social-media) {
-  font-size: 14px;
-}
-.social-media span {
-  font-size: 16px;
-}
-.social-media span .fas {
-  margin: 0 0 0 10px;
-}
-.social-media a {
-  color: #000;
-  font-size: 20px;
+.submit{
+  border-radius:5px;
+  padding:10px;
+  width:150px;
+  color: white;
+  background-color: #DF1B76;  
+  border: none;
+  border-bottom: 5px solid #CB64B2; 
+  margin-top: 150px; 
+
 }
 
-@media (max-width: 425px) {
-  form {
-    width: 100%;
+
+
+@keyframes bounce{
+  0%{
+    
+  }
+  50%{
+    transform: translate(0, 8px);
+  }
+
+}
+@keyframes shadow{
+  0%{
+    
+  }
+  50%{
+    opacity: 0.8;
+    width: 50%;
   }
 }
+
