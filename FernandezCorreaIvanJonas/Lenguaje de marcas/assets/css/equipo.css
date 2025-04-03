@@ -6,6 +6,12 @@
     justify-content: space-around;
 }
 
+.equipo img{
+    height:400;
+    width: 400;
+}
+
+
 .personal {
     flex: 1 1 300px;
     border: 1px solid var(--color-border);
@@ -20,18 +26,6 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.personal img {
-    height:auto;
-    width: 100%;
-    object-fit: cover;
-    border-radius: var(--border-radius);
-    margin-bottom: var(--spacing-small);
--webkit-mask: var(--m);
-        mask: var(--m);
-filter: grayscale(.5);
-transition: .3s linear;
-cursor: pointer;
-}
 
 .personal h4 {
     color: var(--color-primary);
