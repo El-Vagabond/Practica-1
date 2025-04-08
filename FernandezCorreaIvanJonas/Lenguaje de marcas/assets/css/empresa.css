@@ -1,48 +1,41 @@
-/* assets/css/style.css */
-
 .empresa {
-    max-width: 100%; /* Ancho máximo del contenedor */
-    margin: 20px auto; /* Centrado con márgenes */
+    max-width: 100%;
+    margin: 20px auto;
     padding: 20px;
 }
 
-/* Estilos para los párrafos dentro de empresa */
 .empresa p {
     margin: 20px 0;
     line-height: 1.6;
-    clear: both; /* Evita que el texto se superponga a las imágenes flotantes */
+    clear: both;
 }
 
-/* Estilos para todas las imágenes dentro de empresa */
 .empresa img {
-    width: 500px; /* Dimensiones fijas para todas las imágenes menos la última */
+    width: 500px;
     height: 100%;
-    object-fit:fill; /* Mantiene la proporción de las imágenes */
-    float: left; /* Alinea las imágenes a la izquierda */
-    margin: 0 20px 20px 0; /* Espaciado alrededor de las imágenes */
-    border-radius: 8px; /* Bordes redondeados opcionales */
+    object-fit: fill;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 8px;
 }
 
-/* Estilo específico para la última imagen (que tiene class="logo") */
 .empresa img.logo {
     width: 100; /* Ocupa todo el ancho */
     height: 75%; /* Mantiene la proporción */
-    float: none; /* Elimina el flotado */
-    margin: 1px 0; /* Márgenes superior e inferior */
-    display: block; /* Asegura que sea un elemento de bloque */
+   
+    margin: 1px 10; /* Márgenes superior e inferior */
+   
 }
 
-/* Media query para dispositivos móviles */
 @media (max-width: 768px) {
     .empresa img {
-        width: 100%; /* En móvil, todas las imágenes ocupan el ancho completo */
+        width: 100%;
         height: auto;
-        float: none;
-        margin: 10px 0;
+        margin: 10px auto;
     }
     
     .empresa img.logo {
         width: 100%;
-        margin: 10px 0;
+        margin: 10px auto;
     }
 }
