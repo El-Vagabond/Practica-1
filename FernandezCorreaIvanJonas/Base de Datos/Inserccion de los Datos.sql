@@ -1,4 +1,3 @@
-
 USE HappinessCo;
 GO
 --Insertamos los Usuarios
@@ -38,7 +37,7 @@ INSERT INTO Imagenes (titulo, imagen, id_galeria) VALUES
 ('Tsunami Mujer', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\tsu1.jpg"', 2),
 ('LLenazo', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\tsu2.jpg"', 2);
 
--- Para la galería del Concierto Melendi
+-- Para la galería del Concierto Rock
 INSERT INTO Imagenes (titulo, imagen, id_galeria) VALUES
 ('Melendi cerca', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\concierto1.jpg"', 3),
 ('Escenario', '"C:\Users\ALUMNOS_FP\OneDrive - TuniverS Formación\Practica 1\FernandezCorreaIvanJonas\Base de Datos\Imagenes\concierto2.jpg"', 3),
